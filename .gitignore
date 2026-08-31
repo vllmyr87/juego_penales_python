@@ -1,3 +1,27 @@
+# Variables de entorno
+.env
+.env.*
+!.env.example
+
+# Python
 __pycache__/
 *.py[cod]
+*.pyo
+*.pyd
+
+# Entornos virtuales
+venv/
+.venv/
+ENV/
+env/
+
+# Base de datos local
 database/*.db
+*.db
+*.sqlite3
+
+# Archivos sensibles
+*.pem
+*.key
+*.crt
+*.log

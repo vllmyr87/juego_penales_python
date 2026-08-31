@@ -5,10 +5,15 @@ from datetime import datetime
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DATABASE_DIR = os.path.dirname(os.path.abspath(__file__))
 DATABASE_PATH = os.path.join(DATABASE_DIR, "penales.db")
+DB_USUARIO = os.getenv("DB_USUARIO", "jugador_local")
+DB_PASSWORD = os.getenv("DB_PASWORD", "")
 
 
 class GameDatabase:
     def __init__(self, player_name="Jugador"):
+        self.db_user = DB_USUARIO
+        self.db_password = DB_PASSWORD
+        print(f"Conectando usuario: {self.db_user}")
         os.makedirs(DATABASE_DIR, exist_ok=True)
         self.player_name = player_name
         self.connection = sqlite3.connect(DATABASE_PATH)
