@@ -2,7 +2,11 @@ import os
 import sqlite3
 from datetime import datetime
 
+from dotenv import load_dotenv
+
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+load_dotenv(os.path.join(BASE_DIR, ".env"))
+
 DATABASE_DIR = os.path.dirname(os.path.abspath(__file__))
 DATABASE_PATH = os.path.join(DATABASE_DIR, "penales.db")
 DB_USUARIO = os.getenv("DB_USUARIO", "jugador_local")
